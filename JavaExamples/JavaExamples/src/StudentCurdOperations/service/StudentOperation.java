@@ -15,7 +15,7 @@ public class StudentOperation implements StudentInterface {
     public void curd() throws SQLException {
         while(true) {
             System.out.println(" Select your choices : ");
-            System.out.println(" to crate press 1 , to update press 2, to retrive data press 3, to delete record based on ID press 4 and enter " );
+            System.out.println(" to crate press 1 , to update press 2, to retrive data press 3, to delete record based on ID press 4 and enter, PRESS 5 to exit " );
             Scanner scanner = new Scanner(System.in);
             int selectedChoice = scanner.nextInt();
             StudentOperation studentOperation = new StudentOperation();
@@ -73,12 +73,17 @@ public class StudentOperation implements StudentInterface {
         }
     }
 
-    public void deleteStudentRecord(int id) {
+    public void deleteStudentRecord(int id) throws SQLException {
         // delete by id
+        DeleteStudentRecord deleteStudentRecord = new DeleteStudentRecord();
+        deleteStudentRecord.deleteStudentBasedOnID(id);
+
     }
 
-    public void showAllStudents() {
+    public void showAllStudents() throws SQLException {
         // show all
+        RetriceStudentDataBase retriceStudentDataBase = new RetriceStudentDataBase();
+        retriceStudentDataBase.showAllStudents();
     }
 
     public void updateStudent(Student student) throws SQLException {

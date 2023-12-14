@@ -13,9 +13,9 @@ public interface StudentInterface {
 
     public void curd() throws SQLException;
 
-    void deleteStudentRecord(int id);
+    void deleteStudentRecord(int id) throws SQLException;
 
-    void showAllStudents();
+    void showAllStudents() throws SQLException;
 
     void updateStudent(Student student) throws SQLException;
 
