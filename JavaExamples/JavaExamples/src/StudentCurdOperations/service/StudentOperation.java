@@ -3,6 +3,7 @@ package StudentCurdOperations.service;
 import StudentCurdOperations.impl.StudentInterface;
 import StudentCurdOperations.model.Student;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Scanner;
  * Inheritance
  */
 public class StudentOperation implements StudentInterface {
-    public void curd() {
+    public void curd() throws SQLException {
         while(true) {
             System.out.println(" Select your choices : ");
             System.out.println(" to crate press 1 , to update press 2, to retrive data press 3, to delete record based on ID press 4 and enter " );
@@ -26,13 +27,15 @@ public class StudentOperation implements StudentInterface {
                     Scanner scannerStudentCreate = new Scanner(System.in);
                     System.out.println("Enter Name ");
                     student.setName(scannerStudentCreate.nextLine());
+                    System.out.println("Enter Last Name ");
+                    student.setLastName(scannerStudentCreate.nextLine());
                     System.out.println("Enter Id");
                     student.setID(scannerStudentCreate.nextInt());
                     System.out.println("Enter Age ");
                     student.setAge(scannerStudentCreate.nextInt());
-                    System.out.println("Enter Last Name ");
-                    student.setLastName(scannerStudentCreate.nextLine());
                     studentOperation.addStudent(student);
+
+
                     break;
 
                 case 2:
@@ -82,7 +85,7 @@ public class StudentOperation implements StudentInterface {
         //update to DB based on ID
     }
 
-    public boolean addStudent(Student student){
+    public boolean addStudent(Student student) throws SQLException {
         //add to DB
         AddNewStudent addNewStudent = new AddNewStudent();
         addNewStudent.saveStudent(student);
