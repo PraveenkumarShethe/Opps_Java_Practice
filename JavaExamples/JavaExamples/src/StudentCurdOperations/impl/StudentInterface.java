@@ -17,7 +17,7 @@ public interface StudentInterface {
 
     void showAllStudents();
 
-    void updateStudent(Student student);
+    void updateStudent(Student student) throws SQLException;
 
     boolean addStudent(Student student) throws SQLException;
 }

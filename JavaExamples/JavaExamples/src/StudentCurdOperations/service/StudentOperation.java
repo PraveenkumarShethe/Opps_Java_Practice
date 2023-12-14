@@ -45,12 +45,12 @@ public class StudentOperation implements StudentInterface {
                     Scanner scannerStudentUpdate = new Scanner(System.in);
                     System.out.println("Enter Name ");
                     studentUpodate.setName(scannerStudentUpdate.nextLine());
+                    System.out.println("Enter Last Name ");
+                    studentUpodate.setLastName(scannerStudentUpdate.nextLine());
                     System.out.println("Enter Id for which you want to update the record ");
                     studentUpodate.setID(scannerStudentUpdate.nextInt());
                     System.out.println("Enter Age ");
                     studentUpodate.setAge(scannerStudentUpdate.nextInt());
-                    System.out.println("Enter Last Name ");
-                    studentUpodate.setLastName(scannerStudentUpdate.nextLine());
                     studentOperation.updateStudent(studentUpodate);
                     break;
 
@@ -81,8 +81,10 @@ public class StudentOperation implements StudentInterface {
         // show all
     }
 
-    public void updateStudent(Student student) {
+    public void updateStudent(Student student) throws SQLException {
         //update to DB based on ID
+        UpdateStudentDetails updateStudentDetails = new UpdateStudentDetails();
+        updateStudentDetails.updateStudent(student);
     }
 
     public boolean addStudent(Student student) throws SQLException {
