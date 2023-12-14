@@ -1,4 +1,6 @@
-package StudentCurdOperations;
+package StudentCurdOperations.impl;
+
+import StudentCurdOperations.model.Student;
 
 /**
  * Created by Praveenkumar on 12/14/2023.
@@ -15,5 +17,5 @@ public interface StudentInterface {
 
     void updateStudent(Student student);
 
-    boolean addStudent(Student student)
+    boolean addStudent(Student student);
 }

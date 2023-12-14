@@ -1,5 +1,7 @@
 package StudentCurdOperations;
 
+import StudentCurdOperations.service.StudentOperation;
+
 /**
  * Created by Praveenkumar on 12/14/2023.
  */

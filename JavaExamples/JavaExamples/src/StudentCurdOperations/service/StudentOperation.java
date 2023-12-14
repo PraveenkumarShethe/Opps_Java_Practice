@@ -1,4 +1,7 @@
-package StudentCurdOperations;
+package StudentCurdOperations.service;
+
+import StudentCurdOperations.impl.StudentInterface;
+import StudentCurdOperations.model.Student;
 
 import java.util.Scanner;
 
@@ -7,7 +10,7 @@ import java.util.Scanner;
  *
  * Inheritance
  */
-public class StudentOperation implements StudentInterface{
+public class StudentOperation implements StudentInterface {
     public void curd() {
         while(true) {
             System.out.println(" Select your choices : ");
@@ -81,6 +84,8 @@ public class StudentOperation implements StudentInterface{
 
     public boolean addStudent(Student student){
         //add to DB
+        AddNewStudent addNewStudent = new AddNewStudent();
+        addNewStudent.saveStudent(student);
         return true;
     }
 }

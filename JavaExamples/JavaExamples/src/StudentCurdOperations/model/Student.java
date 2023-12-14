@@ -1,4 +1,4 @@
-package StudentCurdOperations;
+package StudentCurdOperations.model;
 
 import java.util.Objects;
 
@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class Student {
 
-    Student(){}
+    public Student(){}
 
     public Student(String name, String lastName, int ID, int age) {
         this.name = name;
